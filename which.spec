@@ -1,7 +1,7 @@
 Name:		which
 Summary:	Displays where a particular program in your path is located
 Version:	2.16
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPL
 Group:		System/Base
 Source0:	ftp://ftp.gnu.org/gnu/which/%{name}-%{version}.tar.bz2
@@ -10,7 +10,8 @@ Patch0:		which-2.6.jbj.patch.bz2
 Patch1:		which-2.12-fixinfo.patch.bz2
 Patch2:		which-2.16-afs.patch.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Prereq:		/sbin/install-info
+Requires(post): info-install
+Requires(preun): info-install
 
 %description
 The which command shows the full pathname of a specified program, if
