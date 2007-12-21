@@ -9,6 +9,7 @@ URL:		ftp://ftp.gnu.org/gnu/which/
 Patch0:		which-2.6.jbj.patch
 Patch1:		which-2.12-fixinfo.patch
 Patch2:		which-2.16-afs.patch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires(post):	info-install
 Requires(preun): info-install
 
