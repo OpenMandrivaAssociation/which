@@ -1,18 +1,20 @@
 Name:		which
 Summary:	Displays where a particular program in your path is located
-Version:	2.17
+Version:	2.19
 Release:	%mkrel 1
-License:	GPL
+License:	GPLv3
 Group:		System/Base
 Source0:	ftp://ftp.gnu.org/gnu/which/%{name}-%{version}.tar.bz2
 URL:		ftp://ftp.gnu.org/gnu/which/
 Patch0:		which-2.6.jbj.patch
 Patch1:		which-2.12-fixinfo.patch
-Patch2:		which-2.16-afs.patch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Patch2:		which-2.19-afs.patch
+# (tpg) liberty-devel
+BuildRequires:	binutils-devel
+BuildRequires:	readline-devel
 Requires(post):	info-install
 Requires(preun): info-install
-
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %description
 The which command shows the full pathname of a specified program, if
 the specified program is in your PATH.
