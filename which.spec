@@ -1,7 +1,7 @@
 Name:		which
 Summary:	Displays where a particular program in your path is located
 Version:	2.19
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv3
 Group:		System/Base
 Source0:	ftp://ftp.gnu.org/gnu/which/%{name}-%{version}.tar.bz2
