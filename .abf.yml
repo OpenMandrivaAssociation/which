@@ -1,2 +1,3 @@
 sources:
-  "which-2.20.tar.bz2": 0eb8bf189c2957f50cacba744fe9304c565989b8
+  which-2.20.tar.gz: 3bcd6d87aa5231917ba7123319eedcae90cfa0fd
+  which-2.20.tar.gz.sig: e02437e2f2850f58e08091503dc36a9c2aee2fc8
