@@ -24,7 +24,7 @@ the specified program is in your PATH.
 %patch2 -p1
 
 %build
-%configure2_5x
+%configure
 %make
 
 %install
