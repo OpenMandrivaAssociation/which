@@ -7,8 +7,8 @@ Group:		System/Base
 URL:		ftp://ftp.gnu.org/gnu/which/
 Source0:	ftp://ftp.gnu.org/gnu/which/%{name}-%{version}.tar.gz
 Patch0:		which-2.6.jbj.patch
-Patch1:		which-2.12-fixinfo.patch
-Patch2:		which-2.19-afs.patch
+Patch1:		which-2.21-fixinfo.patch
+Patch2:		which-2.21-afs.patch
 # (tpg) liberty-devel
 BuildRequires:	binutils-devel
 BuildRequires:	readline-devel
@@ -19,9 +19,7 @@ the specified program is in your PATH.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p0
-%patch2 -p1
+%apply_patches
 
 %build
 %configure
