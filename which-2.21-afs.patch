@@ -1,6 +1,6 @@
 diff -Naur which-2.21/bash.c which-2.21.tpg/bash.c
 --- which-2.21/bash.c	2015-03-19 18:06:11.000000000 +0000
-+++ which-2.21.tpg/bash.c	2015-03-21 10:15:19.338228101 +0000
++++ which-2.21.tpg/bash.c	2015-03-21 10:33:02.669498008 +0000
 @@ -34,7 +34,6 @@
   * The following macro's are used in bash, and below:
   */
@@ -9,17 +9,18 @@ diff -Naur which-2.21/bash.c which-2.21.tpg/bash.c
  #undef NOGROUP
  
  /*
-@@ -266,7 +265,8 @@
+@@ -266,7 +265,9 @@
      r |= FS_READABLE;
  
    return r;
 -#elif defined (AFS)
 +
 +    if (getenv("AFS"))
++	{
    /* We have to use access(2) to determine access because AFS does not
       support Unix file system semantics.  This may produce wrong
       answers for non-AFS files when ruid != euid.  I hate AFS. */
-@@ -276,7 +276,9 @@
+@@ -276,7 +277,9 @@
      r |= FS_READABLE;
  
    return r;
@@ -30,12 +31,13 @@ diff -Naur which-2.21/bash.c which-2.21.tpg/bash.c
  
    /* Find out if the file is actually executable.  By definition, the
       only other criteria is that the file has an execute bit set that
-@@ -320,7 +322,7 @@
+@@ -320,7 +323,8 @@
      }
  
    return r;
 -#endif /* !AFS */
 +    } /* !AFS */
++#endif
  }
  
  /* From bash-4.3 / general.c / line 604 ; Changes: Using 'strchr' instead of 'mbschr'. */
