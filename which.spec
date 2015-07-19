@@ -1,7 +1,7 @@
 Name:		which
 Summary:	Displays where a particular program in your path is located
 Version:	2.21
-Release:	1
+Release:	2
 License:	GPLv3
 Group:		System/Base
 URL:		ftp://ftp.gnu.org/gnu/which/
