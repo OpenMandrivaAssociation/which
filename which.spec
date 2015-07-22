@@ -22,6 +22,9 @@ the specified program is in your PATH.
 %apply_patches
 
 %build
+# (tpg) add missing file
+touch ChangeLog
+
 %configure
 %make
 
