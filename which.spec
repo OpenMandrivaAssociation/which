@@ -7,8 +7,7 @@ Group:		System/Base
 URL:		ftp://ftp.gnu.org/gnu/which/
 Source0:	ftp://ftp.gnu.org/gnu/which/%{name}-%{version}.tar.gz
 Patch0:		which-2.6.jbj.patch
-Patch1:		which-2.21-fixinfo.patch
-Patch2:		which-2.21-afs.patch
+Patch1:		which-2.21-coverity-fixes.patch
 # (tpg) liberty-devel
 BuildRequires:	binutils-devel
 BuildRequires:	readline-devel
@@ -18,18 +17,17 @@ The which command shows the full pathname of a specified program, if
 the specified program is in your PATH.
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 # (tpg) add missing file
 touch ChangeLog
 
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 rm -rf %{buildroot}%{_infodir}/dir
 
